@@ -27,10 +27,6 @@ namespace SampleApplication.Controllers
             var result = personTask.Data;
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult TestForNativeListStructure()
-        {
-            return Json(new PersonTask().getAllPerson(), JsonRequestBehavior.AllowGet);
-        }
         public JsonResult TestForNativeObjectFailStructure()
         {
             return Json(new PersonTask().findPersonWithId(5), JsonRequestBehavior.AllowGet);
@@ -38,6 +34,10 @@ namespace SampleApplication.Controllers
         public JsonResult TestForNativeObjectSuccessStructure()
         {
             return Json(new PersonTask().findPersonWithId(1), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult TestForNativeListStructure()
+        {
+            return Json(new PersonTask().getAllPersonWithHelper(), JsonRequestBehavior.AllowGet);
         }
     }
 }

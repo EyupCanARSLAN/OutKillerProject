@@ -2,7 +2,6 @@
 using ServiceResponse;
 using System.Collections.Generic;
 using System.Linq;
-
 namespace SampleApplication.Task
 {
     public class PersonTask
@@ -36,10 +35,6 @@ namespace SampleApplication.Task
         public ServiceResult<List<Person>> getAllPersonWithHelper()
         {
             return ServiceResult<List<Person>>.SuccessResponse(personList);
-        }
-        public List<Person> getAllPerson()
-        {
-            return personList;
         }
     }
 }
