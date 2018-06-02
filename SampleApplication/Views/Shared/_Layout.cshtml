@@ -17,14 +17,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Uygulama adı", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Out Killer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Giriş Sayfası", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Hakkında", "About", "Home")</li>
-                    <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
-                </ul>
+
             </div>
         </div>
     </div>
@@ -32,7 +28,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ASP.NET Uygulamam</p>
+            <p>&copy; @DateTime.Now.Year - Out Killer</p>
         </footer>
     </div>
 

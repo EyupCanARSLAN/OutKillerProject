@@ -13,16 +13,6 @@ namespace SampleApplication.Controllers
         {
             return View();
         }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-            return View();
-        }
         public JsonResult TestForSuccessStructure()
         {
             var personTask = new PersonTask().getAllPersonWithHelper();
@@ -36,6 +26,18 @@ namespace SampleApplication.Controllers
             if (personTask.Status == ServiceResultStatus.Fail) return Json(personTask.Message, JsonRequestBehavior.AllowGet);
             var result = personTask.Data;
             return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult TestForNativeListStructure()
+        {
+            return Json(new PersonTask().getAllPerson(), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult TestForNativeObjectFailStructure()
+        {
+            return Json(new PersonTask().findPersonWithId(5), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult TestForNativeObjectSuccessStructure()
+        {
+            return Json(new PersonTask().findPersonWithId(1), JsonRequestBehavior.AllowGet);
         }
     }
 }

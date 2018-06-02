@@ -1,6 +1,8 @@
 ﻿using SampleApplication.Models;
 using ServiceResponse;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace SampleApplication.Task
 {
     public class PersonTask
@@ -11,12 +13,14 @@ namespace SampleApplication.Task
             personList = new List<Person>();
             Person personObj = new Person
             {
+                Id = 1,
                 Address = "Test",
                 Age = 20,
                 NameSurname = "CanBey"
             };
             Person personObj1 = new Person
             {
+                Id = 2,
                 Address = "Test1",
                 Age = 21,
                 NameSurname = "CanBey1"
@@ -26,7 +30,8 @@ namespace SampleApplication.Task
         }
         public ServiceResult<Person> findPersonWithId(int id)
         {
-            return ServiceResult<Person>.FailResponse("RecordNotFound");
+            var foundedPerson = personList.FirstOrDefault(x => x.Id == id);
+            return foundedPerson != null ? ServiceResult<Person>.SuccessResponse(foundedPerson) : ServiceResult<Person>.FailResponse("Record not found.");
         }
         public ServiceResult<List<Person>> getAllPersonWithHelper()
         {
