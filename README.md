@@ -11,7 +11,7 @@ This class aim is that create standardization rules to functions return object. 
  Encoruge To use SOLID prencibles and develope execeture and private method in class
 
 Here is the sample piece of code to show usage.
-```
+``` c#
 using SampleApplication.Models;
 using ServiceResponse;
 using System.Collections.Generic;
