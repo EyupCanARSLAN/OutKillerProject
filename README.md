@@ -1,5 +1,12 @@
 # OutKillerProject
 
+=======================================================
+You can include this package as nuget package in your project.
+
+https://www.nuget.org/packages/OutKiller/
+
+=======================================================
+
 This class aim is that create standardization rules to functions return object. This structure has a few benefit like that I showed in below
 
 > Help you to code standartizion and coverage of code's purpose.
